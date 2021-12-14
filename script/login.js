@@ -17,8 +17,8 @@ window.onload = async function () {
 
     document.getElementById("login-form").addEventListener("submit", e => {
         e.preventDefault();
-        let emailValue = document.getElementById("login-email").value
-        let passwordValue = document.getElementById("login-password").value
+        let emailValue = document.getElementById("login-email").value;
+        let passwordValue = document.getElementById("login-password").value;
 
         const credentials = {
             email: emailValue,
@@ -31,13 +31,13 @@ window.onload = async function () {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(credentials)
-            }).then(res => {
-                res.json()
+            })
+            .then(res => {
+                return res.json();
             })
             .then(data => {
-
+                //getting post data source: https://stackoverflow.com/questions/29775797/fetch-post-json-data
                 console.log(data);
-
             })
     })
 
