@@ -1,31 +1,31 @@
-"use strict";
-
-
 window.onload = async function () {
+    if (window.location.href.indexOf("/docs/") > -1) {
 
-    /////////////////////////
-    // ---- MAIN PAGE ---- //
-    /////////////////////////
+        /////////////////////////
+        // ---- MAIN PAGE ---- //
+        /////////////////////////
 
-    let mainPageNumber = 0;
+        console.log(window.location.pathname);
 
-    if (mainPageNumber == 0) {
-        homepageDeals();
-    }
+        let mainPageNumber = 0;
 
-    function homepageDeals() {
-        fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1,6,10,12&sortBy=Savings&pageSize=4&pageNumber=${mainPageNumber}`)
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
+        if (mainPageNumber == 0) {
+            homepageDeals();
+        }
 
-                console.log("Main page fetch!", data);
+        function homepageDeals() {
+            fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1,6,10,12&sortBy=Savings&pageSize=4&pageNumber=${mainPageNumber}`)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
 
-                //CHANGE BODY TO RESULTS
-                for (let k of data) {
-                    document.getElementById("body-search-list").innerHTML +=
-                        `
+                    console.log("Main page fetch!", data);
+
+                    //CHANGE BODY TO RESULTS
+                    for (let k of data) {
+                        document.getElementById("body-search-list").innerHTML +=
+                            `
                                     <div class="body-search-list-game">
                                         <div class="body-search-list-game-container1">
                                             <img class="body-search-list-game-thumb" src="${k.thumb}">
@@ -38,42 +38,44 @@ window.onload = async function () {
                                         </div>
                                     </div>
                                     `;
-                }
-            });
-    }
-    let loadMore = document.getElementById("loadMore");
+                    }
+                });
+        }
+        let loadMore = document.getElementById("loadMore");
 
-    loadMore.addEventListener("click", e => {
-        mainPageNumber += 1;
-        homepageDeals();
-    });
+        loadMore.addEventListener("click", e => {
+            mainPageNumber += 1;
+            homepageDeals();
+        });
 
-    //////////////////////////
-    // ---- SEARCH BOX ---- //
-    //////////////////////////
 
-    document.getElementById("header-search-form").addEventListener("submit", e => {
-        e.preventDefault();
 
-        //Remove load more
-        document.getElementById("body-search-more").innerHTML = ``;
+        //////////////////////////
+        // ---- SEARCH BOX ---- //
+        //////////////////////////
 
-        let searchBox = document.getElementById("header-search-box").value;
-        console.log(searchBox);
-        fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                console.log("Search fetch!", data);
+        document.getElementById("header-search-form").addEventListener("submit", e => {
+            e.preventDefault();
 
-                //deletes previous html entries if you search again
-                document.getElementById("body-search-list").innerHTML = ``
+            //Remove load more
+            document.getElementById("body-search-more").innerHTML = ``;
 
-                //CHANGE BODY TO SEARCH RESULTS
-                for (let k of data) {
-                    document.getElementById("body-search-list").innerHTML +=
-                        `
+            let searchBox = document.getElementById("header-search-box").value;
+            console.log(searchBox);
+            fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Search fetch!", data);
+
+                    //deletes previous html entries if you search again
+                    document.getElementById("body-search-list").innerHTML = ``
+
+                    //CHANGE BODY TO SEARCH RESULTS
+                    for (let k of data) {
+                        document.getElementById("body-search-list").innerHTML +=
+                            `
                         <div class="body-search-list-game">
                             <div class="body-search-list-game-container1">
                                 <img class="body-search-list-game-thumb" src="${k.thumb}">
@@ -85,7 +87,8 @@ window.onload = async function () {
                             </div>
                         </div>
                         `;
-                }
-            })
-    });
+                    }
+                })
+        });
+    }
 }
