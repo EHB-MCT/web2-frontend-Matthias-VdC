@@ -4,6 +4,8 @@
 window.onload = async function () {
 
 
+    //SessionStorage   src:   https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage?retiredLocale=nl
+
     // Show / Hide password adapted from: https://www.w3schools.com/howto/howto_js_toggle_password.asp
     document.getElementById("show-password").addEventListener("click", e => {
         let pass = document.getElementById("login-password");
@@ -36,8 +38,16 @@ window.onload = async function () {
                 return res.json();
             })
             .then(data => {
-                //getting post data source: https://stackoverflow.com/questions/29775797/fetch-post-json-data
-                console.log(data);
+                if (data) {
+                    //getting post data source: https://stackoverflow.com/questions/29775797/fetch-post-json-data
+                    console.log(data);
+
+                    //Saves user id to browser
+                    sessionStorage.setItem("id", data.id);
+                    sessionStorage.setItem("login", data.login);
+                } else {
+                    console.log("Invalid credentials");
+                }
             })
     })
 
