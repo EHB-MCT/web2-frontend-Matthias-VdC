@@ -1,5 +1,5 @@
 window.onload = async function () {
-    if (window.location.pathname === './docs/login.html') {
+    if (window.location.href.indexOf("/docs/login.html") > -1) {
 
         // Show / Hide password adapted from: https://www.w3schools.com/howto/howto_js_toggle_password.asp
         document.getElementById("show-password").addEventListener("click", e => {

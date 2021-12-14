@@ -1,5 +1,5 @@
 window.onload = async function () {
-    if (window.location.href.indexOf("/docs/") > -1) {
+    if (window.location.href.indexOf("/docs/index.html") > -1) {
 
         /////////////////////////
         // ---- MAIN PAGE ---- //
