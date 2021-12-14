@@ -1,5 +1,6 @@
-window.onload = async function () {
-    if (window.location.href.indexOf("index.html") > -1) {
+//src:  https://stackoverflow.com/questions/4597050/how-to-check-if-the-url-contains-a-given-string
+if (window.location.href.indexOf("index") > -1) {
+    window.onload = async function () {
 
         /////////////////////////
         // ---- MAIN PAGE ---- //

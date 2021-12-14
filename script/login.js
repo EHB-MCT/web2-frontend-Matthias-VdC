@@ -1,5 +1,6 @@
-window.onload = async function () {
-    if (window.location.href.indexOf("login.html") > -1) {
+//src:  https://stackoverflow.com/questions/4597050/how-to-check-if-the-url-contains-a-given-string
+if (window.location.href.indexOf("login") > -1) {
+    window.onload = async function () {
 
         // Show / Hide password adapted from: https://www.w3schools.com/howto/howto_js_toggle_password.asp
         document.getElementById("show-password").addEventListener("click", e => {
