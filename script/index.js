@@ -7,7 +7,7 @@
 
 //Check if url is github or not
 github = false;
-if (location.pathname.indexOf("web2-frontend-Matthias-VdC")) {
+if (location.pathname.indexOf("web2-frontend-Matthias-VdC") != 1) {
     github = true;
 }
 
@@ -76,22 +76,23 @@ document.getElementById("header-search-form").addEventListener("submit", e => {
     }
 })
 
-let searchBox = sessionStorage.getItem("Search");
-console.log(searchBox);
-fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
-    .then(response => {
-        return response.json();
-    })
-    .then(data => {
-        console.log("Search fetch!", data);
+if (location.pathname.indexOf("search.html") != 1) {
+    let searchBox = sessionStorage.getItem("Search");
+    console.log(searchBox);
+    fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log("Search fetch!", data);
 
-        //deletes previous html entries if you search again
-        document.getElementById("body-search-list").innerHTML = ``
+            //deletes previous html entries if you search again
+            document.getElementById("body-search-list").innerHTML = ``
 
-        //CHANGE BODY TO SEARCH RESULTS
-        for (let k of data) {
-            document.getElementById("body-search-list").innerHTML +=
-                `
+            //CHANGE BODY TO SEARCH RESULTS
+            for (let k of data) {
+                document.getElementById("body-search-list").innerHTML +=
+                    `
                         <div class="body-search-list-game">
                             <div class="body-search-list-game-container1">
                                 <img class="body-search-list-game-thumb" src="${k.thumb}">
@@ -103,5 +104,6 @@ fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pag
                             </div>
                         </div>
                         `;
-        }
-    })
+            }
+        })
+}
