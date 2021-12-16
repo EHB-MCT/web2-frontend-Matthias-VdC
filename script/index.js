@@ -60,7 +60,7 @@ if (document.getElementById("loadMore")) {
 
 github = false;
 
-if (location.pathname == '/web2-frontend-Matthias-VdC/') {
+if (location.pathname.indexOf("web2-frontend-Matthias-VdC")) {
     github = true;
 }
 
