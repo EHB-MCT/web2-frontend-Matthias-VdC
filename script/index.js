@@ -7,7 +7,7 @@
 
 //Check if url is github or not
 github = false;
-if (location.pathname.indexOf("web2-frontend-Matthias-VdC") != 1) {
+if (location.pathname.indexOf("web2-frontend-Matthias-VdC") != -1) {
     github = true;
 }
 
@@ -76,7 +76,7 @@ document.getElementById("header-search-form").addEventListener("submit", e => {
     }
 })
 
-if (location.pathname.indexOf("search.html") != 1) {
+if (location.pathname.indexOf("search.html") != -1) {
     let searchBox = sessionStorage.getItem("Search");
     console.log(searchBox);
     fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
