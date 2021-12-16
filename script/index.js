@@ -4,9 +4,9 @@
 /////////////////////////
 // ---- MAIN PAGE ---- //
 /////////////////////////
+let mainPageNumber = 0;
 
 if (document.getElementById("body-search-list") && !document.getElementById("login-form") && document.getElementById("body-search-more")) {
-    let mainPageNumber = 0;
 
     if (mainPageNumber == 0) {
         homepageDeals();
