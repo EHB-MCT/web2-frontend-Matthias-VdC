@@ -1,6 +1,6 @@
 //src:  https://stackoverflow.com/questions/4597050/how-to-check-if-the-url-contains-a-given-string
 
-if (window.location.pathname.length == 1 || window.location.pathname == "/docs/") {
+if (window.location.pathname.length == 1 || window.location.pathname == "/docs/" || window.location.href == 'https://ehb-mct.github.io/web2-frontend-Matthias-VdC/') {
     window.location.replace(`${window.location.origin}/docs/index.html`);
 }
 
