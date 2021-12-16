@@ -3,6 +3,9 @@
 if (window.location.pathname.length == 1 || window.location.pathname == "/docs/" || window.location.href == 'https://ehb-mct.github.io/web2-frontend-Matthias-VdC/') {
     window.location.replace(`${window.location.origin}/docs/index.html`);
 }
+if (window.location.href == 'https://ehb-mct.github.io/web2-frontend-Matthias-VdC/') {
+    window.location.replace(`${window.location.href}${window.location.pathname}index.html`)
+}
 
 if (window.location.href.indexOf("index") > -1) {
     window.onload = async function () {
