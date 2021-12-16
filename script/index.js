@@ -68,8 +68,13 @@ document.getElementById("header-search-form").addEventListener("submit", e => {
     e.preventDefault();
 
     sessionStorage.setItem("Search", document.getElementById("header-search-box").value);
-    location.assign(`${location.origin}/docs/search.html`);
+    if (github == false) {
+        location.assign(`${location.origin}/docs/search.html`);
+    } else {
+        location.assign(`${location.origin}/web2-frontend-Matthias-VdC/search.html`);
+    }
 })
+'https://ehb-mct.github.io/web2-frontend-Matthias-VdC/search.html'
 
 if (github == false) {
     if (location.pathname == "/docs/search.html" || location.pathname == '/web2-frontend-Matthias-VdC/search.html') {
