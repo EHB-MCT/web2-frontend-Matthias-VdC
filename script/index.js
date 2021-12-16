@@ -58,7 +58,11 @@ if (document.getElementById("loadMore")) {
 // ---- SEARCH BOX ---- //
 //////////////////////////
 
+github = false;
 
+if (location.pathname == '/web2-frontend-Matthias-VdC/') {
+    github = true;
+}
 
 document.getElementById("header-search-form").addEventListener("submit", e => {
     e.preventDefault();
@@ -67,24 +71,24 @@ document.getElementById("header-search-form").addEventListener("submit", e => {
     location.assign(`${location.origin}/docs/search.html`);
 })
 
-if (location.pathname == "/docs/search.html") {
+if (github == false) {
+    if (location.pathname == "/docs/search.html" || location.pathname == '/web2-frontend-Matthias-VdC/search.html') {
+        let searchBox = sessionStorage.getItem("Search");
+        console.log(searchBox);
+        fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log("Search fetch!", data);
 
-    let searchBox = sessionStorage.getItem("Search");
-    console.log(searchBox);
-    fetch(`https://www.cheapshark.com/api/1.0/deals?title=${searchBox}&storeID=1&pageSize=20&sortBy=Reviews`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            console.log("Search fetch!", data);
+                //deletes previous html entries if you search again
+                document.getElementById("body-search-list").innerHTML = ``
 
-            //deletes previous html entries if you search again
-            document.getElementById("body-search-list").innerHTML = ``
-
-            //CHANGE BODY TO SEARCH RESULTS
-            for (let k of data) {
-                document.getElementById("body-search-list").innerHTML +=
-                    `
+                //CHANGE BODY TO SEARCH RESULTS
+                for (let k of data) {
+                    document.getElementById("body-search-list").innerHTML +=
+                        `
                         <div class="body-search-list-game">
                             <div class="body-search-list-game-container1">
                                 <img class="body-search-list-game-thumb" src="${k.thumb}">
@@ -96,6 +100,7 @@ if (location.pathname == "/docs/search.html") {
                             </div>
                         </div>
                         `;
-            }
-        })
+                }
+            })
+    }
 }
