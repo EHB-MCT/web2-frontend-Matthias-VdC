@@ -42,14 +42,36 @@ header {
     z-index: 99;
 }
 
+#header-logo {
+    font-size: 1.5em;
+    color: #00B9FF;
+}
+
+#profile-icon {
+    margin-right: 1em;
+}
+
+#header-profile-link {
+    color: #00B9FF;
+}
+
+
+
 /* Edit styling in search box */
 
+#header-search-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
 #header-search-box {
-    background-color: rgb(179, 86, 86);
+    background-color: #002836;
     color: white;
     border: none;
     border-radius: 20px;
     padding: 12px 18px;
+    width: 25vw;
 }
 
 #header-search-box:focus {
@@ -57,11 +79,24 @@ header {
 }
 
 #header-search-box::placeholder {
-    color: rgba(255, 255, 255, 0.212);
+    color: #00bbffa9;
 }
 
 #header-search-box:focus::placeholder {
     color: transparent;
+}
+
+#header-search-box-button {
+    background-color: #00B9FF;
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 10%;
+    border-radius: 100px;
+    border: 0;
+    height: 85%;
+    cursor: pointer;
 }
 
 /* End of styling edit on search box */

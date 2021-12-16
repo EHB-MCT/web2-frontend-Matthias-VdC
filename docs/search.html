@@ -15,12 +15,13 @@
         <section>
             <div class="header-logo"><a id="header-logo" href="./index.html">GameDiscovery</a></div>
             <div class="header-search">
-                <form id="header-search-form" autocomplete="off">
+                <form id="header-search-form" autocomplete="off" href="./search.html">
                     <input id="header-search-box" type="text" placeholder="Search games...">
+                    <input type="button" id="header-search-box-button">
                 </form>
             </div>
             <div class="header-profile">
-                <a href="#" id="header-profile-link">
+                <a href="./login.html" id="header-profile-link">
                     <img id="profile-icon" src="./images/abstract-user-flat-4.svg" alt="profile picture">
                     <p>Login/Register</p>
                 </a>
@@ -33,32 +34,14 @@
 
         <section id="body-container">
             <div id="body-search-filter"></div>
-
-            <form id="login-form">
-                <label for="login-email"></label>
-                <!-- Pattern taken from:  https://www.w3schools.com/tags/att_input_pattern.asp  -->
-                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email@gmail.com" type="email"
-                    id="login-email" class="login-field" required>
-                <input placeholder="password" type="password" id="login-password" class="login-field" required>
-                <div id="password-container">
-                    <input type="checkbox" id="show-password">
-                    <label for="show-password">Show password</label>
-                </div>
-                <button href="index.html">Log in</button>
-            </form>
-
             <div id="body-search-list"></div>
-
         </section>
 
     </main>
 
-
     <footer>
         footer
     </footer>
-
-
 
     <script src="./main.js"></script>
 </body>
