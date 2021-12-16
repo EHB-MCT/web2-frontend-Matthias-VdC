@@ -1,4 +1,9 @@
 //src:  https://stackoverflow.com/questions/4597050/how-to-check-if-the-url-contains-a-given-string
+
+if (window.location.pathname.length == 1 || window.location.pathname == "/docs/") {
+    window.location.replace(`${window.location.origin}/docs/index.html`);
+}
+
 if (window.location.href.indexOf("index") > -1) {
     window.onload = async function () {
 

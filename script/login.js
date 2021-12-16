@@ -1,4 +1,5 @@
 //src:  https://stackoverflow.com/questions/4597050/how-to-check-if-the-url-contains-a-given-string
+
 if (window.location.href.indexOf("login") > -1) {
     window.onload = async function () {
 
@@ -34,7 +35,7 @@ if (window.location.href.indexOf("login") > -1) {
                     return res.json();
                 })
                 .then(data => {
-                    if (data) {
+                    if (data.login) {
                         //getting post data source: https://stackoverflow.com/questions/29775797/fetch-post-json-data
                         console.log(data);
 
@@ -43,12 +44,12 @@ if (window.location.href.indexOf("login") > -1) {
 
                         sessionStorage.setItem("id", data.id);
                         sessionStorage.setItem("login", data.login);
+                        window.location.assign(`${window.location.origin}/docs/index.html`);
                     } else {
                         console.log("Invalid credentials");
                     }
                 })
         })
-
 
     }
 }
