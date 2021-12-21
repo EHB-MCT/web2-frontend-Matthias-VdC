@@ -13,6 +13,13 @@ if (document.getElementById("show-password")) {
     })
 }
 
+//Check if url is github or not
+let github = false;
+//src: https://stackoverflow.com/questions/21265919/location-pathname-indexof-not-working-with-or
+if (location.pathname.indexOf("web2-frontend-Matthias-VdC") != -1) {
+    github = true;
+}
+
 
 if (document.getElementById("login-form")) {
     document.getElementById("login-form").addEventListener("submit", e => {
@@ -45,7 +52,11 @@ if (document.getElementById("login-form")) {
 
                     sessionStorage.setItem("id", data.id);
                     sessionStorage.setItem("login", data.login);
-                    document.location.href = "/";
+                    if (github == false) {
+                        location.assign(`${location.origin}/docs/index.html`);
+                    } else {
+                        location.assign(`${location.origin}/web2-frontend-Matthias-VdC/index.html`);
+                    }
                 } else {
                     console.log("Invalid credentials");
                 }
