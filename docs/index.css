@@ -136,7 +136,8 @@ ___________________
 
 */
 
-#body-container {
+#body-container,
+#login-container {
     filter: drop-shadow(0 0 5px hsla(0, 0%, 100%, 0.185));
     background-color: white;
     border-radius: 1em;
@@ -147,6 +148,13 @@ ___________________
     gap: 4em;
     border: 1px solid rgba(0, 0, 0, 0.5);
     min-height: 90vh;
+}
+
+#login-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
 }
 
 #body-search-more {}

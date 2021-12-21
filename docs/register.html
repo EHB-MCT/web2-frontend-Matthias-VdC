@@ -38,16 +38,13 @@
                 <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" type="email"
                     id="login-email" class="login-field" required>
                 <input placeholder="password" type="password" id="login-password" class="login-field" required>
-                <div id="password-container">
-                    <input type="checkbox" id="show-password">
-                    <label for="show-password">Show password</label>
-                </div>
+                <input placeholder="verify password" type="password" id="verify-password" class="login-field" required>
                 <button href="index.html">Log in</button>
             </form>
 
-            <p>don't have an account?
+            <p>Already have an account?
                 <!-- https://stackoverflow.com/questions/13003044/href-going-to-top-of-page-prevent -->
-                <a href="./register.html" id="register-button">register now</a>
+                <a href="./login.html" id="login-button">login</a>
             </p>
         </section>
 

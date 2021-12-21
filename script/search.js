@@ -36,6 +36,10 @@ if (location.pathname.indexOf("search.html") != -1) {
     let minPriceFilter = document.getElementById("lower-price").value;
     document.getElementById("lower-price").addEventListener("input", e => {
         e.preventDefault();
+        if (minPriceFilter >= maxPriceFilter) {
+            minPriceFilter = 0;
+            maxPriceFilter = 199;
+        }
         minPriceFilter = document.getElementById("lower-price").value;
         fetchSearch();
     });
@@ -43,13 +47,13 @@ if (location.pathname.indexOf("search.html") != -1) {
     let maxPriceFilter = document.getElementById("max-price").value;
     document.getElementById("max-price").addEventListener("input", e => {
         e.preventDefault();
+        if (minPriceFilter >= maxPriceFilter) {
+            minPriceFilter = 0;
+            maxPriceFilter = 199;
+        }
         maxPriceFilter = document.getElementById("max-price").value;
         fetchSearch();
     });
-
-    if (minPriceFilter >= maxPriceFilter) {
-        minPriceFilter = 0;
-    }
 
     function fetchSearch() {
         fetch(`https://www.cheapshark.com/api/1.0/deals?sortBy=${sortFilterId}&title=${searchBox}&storeID=${storeFilterId}&pageSize=20&lowerPrice=${minPriceFilter}&upperPrice=${maxPriceFilter}`)
