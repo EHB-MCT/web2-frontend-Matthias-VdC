@@ -24,17 +24,35 @@ if (location.pathname.indexOf("search.html") != -1) {
         e.preventDefault();
         storeFilterId = document.getElementById("store-names").value;
         fetchSearch();
-    })
+    });
     //filter by sorting
     let sortFilterId = document.getElementById("sorter-names").value;
     document.getElementById("sorter-names").addEventListener("change", e => {
         e.preventDefault();
         sortFilterId = document.getElementById("sorter-names").value;
         fetchSearch();
-    })
+    });
+    //sort by minimum price
+    let minPriceFilter = document.getElementById("lower-price").value;
+    document.getElementById("lower-price").addEventListener("input", e => {
+        e.preventDefault();
+        minPriceFilter = document.getElementById("lower-price").value;
+        fetchSearch();
+    });
+    //sort by maximum price
+    let maxPriceFilter = document.getElementById("max-price").value;
+    document.getElementById("max-price").addEventListener("input", e => {
+        e.preventDefault();
+        maxPriceFilter = document.getElementById("max-price").value;
+        fetchSearch();
+    });
+
+    if (minPriceFilter >= maxPriceFilter) {
+        minPriceFilter = 0;
+    }
 
     function fetchSearch() {
-        fetch(`https://www.cheapshark.com/api/1.0/deals?sortBy=${sortFilterId}&title=${searchBox}&storeID=${storeFilterId}&pageSize=20`)
+        fetch(`https://www.cheapshark.com/api/1.0/deals?sortBy=${sortFilterId}&title=${searchBox}&storeID=${storeFilterId}&pageSize=20&lowerPrice=${minPriceFilter}&upperPrice=${maxPriceFilter}`)
             .then(response => {
                 return response.json();
             })
