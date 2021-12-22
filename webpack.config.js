@@ -6,6 +6,7 @@ module.exports = {
         login: "./script/login.js",
         search: "./script/search.js",
         loggedin: "./script/loggedin.js",
+        register: "./script/register.js",
     },
     output: {
         path: path.resolve(__dirname, 'docs'),

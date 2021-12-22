@@ -136,8 +136,7 @@ ___________________
 
 */
 
-#body-container,
-#login-container {
+#body-container {
     filter: drop-shadow(0 0 5px hsla(0, 0%, 100%, 0.185));
     background-color: white;
     border-radius: 1em;
@@ -150,32 +149,36 @@ ___________________
     min-height: 90vh;
 }
 
-#login-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-}
-
-#body-search-more {}
-
-
-
 
 
 
 /*
-___________________
+_______________________________
 
----- LOGIN PAGE ----
-___________________
+---- LOGIN & REGISTER PAGE ----
+_______________________________
 
 */
 
-#login-form {
-    width: 50%;
+#register-container,
+#login-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: rgb(250, 250, 250);
+    filter: drop-shadow(0 0 5px hsla(0, 0%, 0%, 0.070));
+    margin: 20vh 0 20vh 0;
+    border-radius: 20px;
+}
+
+#login-form,
+#register-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1em;
 }
 

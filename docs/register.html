@@ -31,23 +31,27 @@
 
     <main>
 
-        <section id="login-container">
-            <form id="login-form">
-                <label for="login-email"></label>
-                <!-- Pattern taken from:  https://www.w3schools.com/tags/att_input_pattern.asp  -->
-                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" type="email"
-                    id="login-email" class="login-field" required>
-                <input placeholder="password" type="password" id="login-password" class="login-field" required>
-                <input placeholder="verify password" type="password" id="verify-password" class="login-field" required>
-                <button href="index.html">Log in</button>
-            </form>
+        <section id="body-container">
+            <div id="register-container">
+                <form id="register-form">
+                    <label for="login-email"></label>
+                    <!-- Pattern taken from:  https://www.w3schools.com/tags/att_input_pattern.asp  -->
+                    <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" type="email"
+                        id="register-email" class="login-field" required>
+                    <input placeholder="password" type="password" id="register-password" class="login-field" required>
+                    <input placeholder="verify password" type="password" id="verify-password" class="login-field"
+                        required>
+                    <div id="matching-password">
+                    </div>
+                    <button id="register-account" href="index.html">Make account</button>
+                </form>
 
-            <p>Already have an account?
-                <!-- https://stackoverflow.com/questions/13003044/href-going-to-top-of-page-prevent -->
-                <a href="./login.html" id="login-button">login</a>
-            </p>
+                <p>Already have an account?
+                    <!-- https://stackoverflow.com/questions/13003044/href-going-to-top-of-page-prevent -->
+                    <a href="./login.html" id="login-button">login</a>
+                </p>
+            </div>
         </section>
-
     </main>
 
 
@@ -55,11 +59,9 @@
         footer
     </footer>
 
-
-
-    <script src="./login.js"></script>
     <script src="./search.js"></script>
     <script src="./loggedin.js"></script>
+    <script src="./register.js"></script>
 </body>
 
 </html>
