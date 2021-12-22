@@ -44,12 +44,8 @@ if (document.getElementById("login-form")) {
             })
             .then(data => {
                 if (data.login) {
-                    //getting post data source: https://stackoverflow.com/questions/29775797/fetch-post-json-data
-                    console.log(data);
-
                     //Saves user id to browser
                     //src:  https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage?retiredLocale=nl
-
                     sessionStorage.setItem("id", data.id);
                     sessionStorage.setItem("login", data.login);
                     window.location.href = 'index.html';
