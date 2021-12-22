@@ -52,11 +52,7 @@ if (document.getElementById("login-form")) {
 
                     sessionStorage.setItem("id", data.id);
                     sessionStorage.setItem("login", data.login);
-                    if (github == false) {
-                        location.assign(`${location.origin}/docs/index.html`);
-                    } else {
-                        location.assign(`${location.origin}/web2-frontend-Matthias-VdC/index.html`);
-                    }
+                    window.location.href = 'index.html';
                 } else {
                     console.log("Invalid credentials");
                 }

@@ -15,7 +15,7 @@
   \****************************/
 /***/ (() => {
 
-eval("//If user is logged in\r\nif (sessionStorage.getItem(\"login\") || sessionStorage.getItem(\"id\")) {\r\n    document.getElementById(\"header-profile\").innerHTML = `<a href=\"./profile.html\" id=\"header-profile-link\"><img id=\"profile-icon\" src=\"./images/abstract-user-flat-4.svg\" alt=\"profile picture\"></a>`;\r\n}\n\n//# sourceURL=webpack://web2-frontend-matthias-vdc/./script/loggedin.js?");
+eval("//If user is logged in\r\nif (sessionStorage.getItem(\"login\") || sessionStorage.getItem(\"id\")) {\r\n    document.getElementById(\"header-profile\").innerHTML = `<a href=\"./profile.html\" id=\"header-profile-link\"><img id=\"profile-icon\" src=\"./images/abstract-user-flat-4.svg\" alt=\"profile picture\"></a>`;\r\n\r\n    if (document.getElementById(\"profile-container\")){\r\n        fetch()\r\n    }\r\n}\n\n//# sourceURL=webpack://web2-frontend-matthias-vdc/./script/loggedin.js?");
 
 /***/ })
 
