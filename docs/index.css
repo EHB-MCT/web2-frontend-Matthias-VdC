@@ -543,6 +543,9 @@ ______________________
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5em 30%;
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 #profile-username-container {
@@ -553,6 +556,10 @@ ______________________
     margin: 1em;
 }
 
+#profile-username {
+    margin: 0 1em;
+}
+
 #profile-header {
     margin: 3em 0;
 }
@@ -561,6 +568,22 @@ ______________________
     margin: 0 3em;
 }
 
+#profile-username-change,
+#profile-username-submit,
+#profile-username-cancel,
+#profile-delete-button {
+    color: white;
+    text-decoration: none;
+    background-color: #00B9FF;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    margin: 0 1.5em;
+    border: none;
+}
+
+#profile-delete-button {
+    margin: 10em 0 0 0;
+}
 
 
 

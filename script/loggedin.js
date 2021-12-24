@@ -31,20 +31,38 @@ if (sessionStorage.getItem("login")) {
             })
     }
 
+    if (document.getElementById("profile-username-cancel")) {
+        console.log("cancel");
+        document.getElementById("profile-username-cancel").addEventListener("click", e => {
+            e.preventDefault();
+            document.getElementById("profile-username-container").innerHTML = `
+        <p id="profile-username">Username: </p>
+        <button id="profile-username-change">change</button>
+        `;
+        });
+    }
+
+    document.getElementById("profile-email-container").innerHTML = `
+        <p>Email: ${userData.email}</p>
+    `;
+
     //if user clicks on profile
     if (document.getElementById("profile-container")) {
         document.getElementById("profile-username").innerText = `Username: ${userData.username}`;
+
         document.getElementById("profile-username-change").addEventListener("click", e => {
             e.preventDefault();
-
             document.getElementById("profile-username-container").innerHTML = `
             <p id="profile-username">Username: </p>
             <input type="text" id="profile-username-changer">
-            <button id="profile-username-submit">change</button>
+            <a href="#/" id="profile-username-submit">submit</a>
+            <a href="#/" id="profile-username-cancel">cancel</a>
             `;
         })
-        document.getElementById("profile-delete-button").addEventListener("click", e => {
-            e.preventDefault();
+
+
+        document.getElementById("profile-delete-button").addEventListener("click", p => {
+            p.preventDefault();
             fetch(`https://course-project-mvdc.herokuapp.com/userdata/delete/${userData._id}`, {
                     method: "DELETE",
                     headers: {
@@ -61,8 +79,8 @@ if (sessionStorage.getItem("login")) {
                 })
         });
         if (document.getElementById("profile-username-submit")) {
-            document.getElementById("profile-username-submit").addEventListener("click", e => {
-                e.preventDefault();
+            document.getElementById("profile-username-submit").addEventListener("click", a => {
+                a.preventDefault();
                 const usernameUpdate = {
                     "username": document.getElementById("profile-username-changer").value
                 }
