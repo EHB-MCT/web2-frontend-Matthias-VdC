@@ -18,6 +18,7 @@
                 <form id="header-search-form" autocomplete="off" href="./search.html">
                     <input id="header-search-box" type="text" placeholder="Search games...">
                     <input type="button" id="header-search-box-button">
+                    <span class=" icon-search"></span>
                 </form>
             </div>
             <div id="header-profile">
@@ -33,7 +34,7 @@
     <main>
 
         <section id="body-container">
-            <div id="body-search-filter">
+            <div id="body-search-container">
                 <div id="store-filter">
                     <select name="store-names" id="store-names">
                         <option value="1">steam</option>
@@ -54,14 +55,19 @@
                         <option value="Recent">Recent</option>
                     </select>
                 </div>
-                <div id="price-sorter">
-                    <label for="lower-price">Minimum Price</label>
+                <div id="price-sorter-low">
+                    <label class="styling-label" for="lower-price">Minimum Price</label>
                     <input type="number" id="lower-price" placeholder="Minimum Price" value="0">
-                    <label for="max-price">Maximum Price</label>
+                </div>
+                <div id="price-sorter-high">
+                    <label class="styling-label" for="max-price">Maximum Price</label>
                     <input type="number" id="max-price" placeholder="Maximum Price" value="199">
                 </div>
             </div>
             <div id="body-search-list"></div>
+            <div id="body-page-nav">
+
+            </div>
         </section>
 
     </main>

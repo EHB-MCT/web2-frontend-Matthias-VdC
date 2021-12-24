@@ -17,6 +17,8 @@
             <div class="header-search">
                 <form id="header-search-form" autocomplete="off">
                     <input id="header-search-box" type="text" placeholder="Search games...">
+                    <input type="button" id="header-search-box-button">
+                    <span class=" icon-search"></span>
                 </form>
             </div>
             <div id="header-profile">
@@ -33,14 +35,18 @@
 
         <section id="body-container">
             <div id="register-container">
+                <h2 id="register-header">REGISTER</h2>
                 <form id="register-form">
+                    <label class="login-input" for="register-name">Username</label>
                     <input type="text" name="username" id="register-name" placeholder="username" class="login-field"
                         required>
-                    <label for="login-email"></label>
+                    <label class="login-input" for="login-email">Email</label>
                     <!-- Pattern taken from:  https://www.w3schools.com/tags/att_input_pattern.asp  -->
                     <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" type="email"
                         id="register-email" class="login-field" required>
+                    <label class="login-input" for="register-password">Password</label>
                     <input placeholder="password" type="password" id="register-password" class="login-field" required>
+                    <label class="login-input" for="verify-password">Verify password</label>
                     <input placeholder="verify password" type="password" id="verify-password" class="login-field"
                         required>
                     <div id="matching-password">
@@ -48,9 +54,9 @@
                     <button id="register-account" href="index.html">Make account</button>
                 </form>
 
-                <p>Already have an account?
+                <p id="account-create">Already have an account?
                     <!-- https://stackoverflow.com/questions/13003044/href-going-to-top-of-page-prevent -->
-                    <a href="./login.html" id="login-button">login</a>
+                    <a href="./login.html" id="login-button-redirect">login ></a>
                 </p>
             </div>
         </section>

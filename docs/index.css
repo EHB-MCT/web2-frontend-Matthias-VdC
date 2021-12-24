@@ -37,9 +37,25 @@ header {
     width: 100%;
     height: 15vh;
     flex-direction: column;
-    background-color: rgb(0, 11, 14);
+    background-color: rgb(0, 0, 0);
     color: white;
     z-index: 99;
+}
+
+h2 {
+    color: hsla(196, 100%, 50%, 1);
+    font-size: 1.3em;
+}
+
+a h2 {
+    color: white;
+}
+
+.view-all-button {
+    padding: 0.7em 1.5em;
+    border-radius: 2em;
+    text-decoration: none;
+    background-color: hsla(196, 100%, 50%);
 }
 
 #header-logo {
@@ -55,6 +71,22 @@ header {
     color: #00B9FF;
 }
 
+.line-separator {
+    width: 80%;
+    border-top: 1px solid hsla(196, 100%, 50%, 0.1);
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+/* Styling of footer */
+
+footer {
+    width: 100vw;
+    /* box shadow generator src: https://html-css-js.com/css/generator/box-shadow/ */
+    -webkit-box-shadow: 5px 0px 50px 50px #000000;
+    box-shadow: 5px 0px 50px 50px #000000;
+}
 
 
 /* Edit styling in search box */
@@ -128,6 +160,79 @@ header a {
 
 
 
+/* General styling of how games are displayed */
+
+#body-search-list,
+#body-top-rated {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5em;
+    padding: 0 4vw;
+}
+
+.body-search-list-game {
+    display: flex;
+    background-color: #fafafa;
+    width: 85%;
+    height: 10vh;
+    border-radius: 1em 0.2em 0.2em 1em;
+    overflow: hidden;
+    /*Adapted from: https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()*/
+    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.12));
+}
+
+.body-search-list-game-thumb {
+    height: 100%;
+
+}
+
+.body-search-list-game-container2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(221, 246, 255);
+}
+
+.game-container-title {
+    font-size: 2em;
+    margin-left: 1.5em;
+    max-width: 60%;
+}
+
+.game-container-savings {
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: hsla(196, 100%, 50%);
+    padding: 0.5em;
+    filter: drop-shadow(0px 0px 10px hsla(0, 0%, 0%, 0.5));
+    border-radius: 0 1em 0 0;
+    font-size: 1em;
+}
+
+.game-container-salePrice {
+    background-color: hsla(196, 100%, 50%);
+    padding: 2.5em 1.7em;
+    border-radius: 5em 0 0 5em;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    width: 4em;
+}
+
+#body-search-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
 /*
 ___________________
 
@@ -138,17 +243,60 @@ ___________________
 
 #body-container {
     filter: drop-shadow(0 0 5px hsla(0, 0%, 100%, 0.185));
-    background-color: white;
+    background-color: rgb(250, 250, 255);
     border-radius: 1em;
-    margin: 25vh 12vw 0 12vw;
+    margin: 25vh 12vw 12vh 12vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 4em;
-    border: 1px solid rgba(0, 0, 0, 0.5);
     min-height: 90vh;
+    overflow: hidden;
+    padding-bottom: 10vh;
 }
 
+#body-header-image-container {}
+
+#body-header-linkwrapper {
+    position: absolute;
+    width: 100%;
+    height: 40vh;
+}
+
+#body-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 100%;
+}
+
+#body-header-image-button {
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    color: white;
+    background-color: hsla(196, 100%, 50%, 0.8);
+    padding: 1em 20% 1em 3%;
+    border-radius: 30em 0 0 30em;
+    font-size: 0.8em;
+}
+
+.body-list-info {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.loadMore {
+    color: white;
+    background-color: #00B9FF;
+    text-decoration: none;
+    padding: 1em 2em;
+    border-radius: 1em;
+    font-size: 1.3em;
+}
 
 
 
@@ -171,6 +319,8 @@ _______________________________
     filter: drop-shadow(0 0 5px hsla(0, 0%, 0%, 0.070));
     margin: 20vh 0 20vh 0;
     border-radius: 20px;
+    height: fit-content;
+    padding: 0 0 4em 0;
 }
 
 #login-form,
@@ -182,7 +332,8 @@ _______________________________
     gap: 1em;
 }
 
-#password-container {
+#password-container,
+#register-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +345,41 @@ _______________________________
     padding: 0.5em;
 }
 
+#login-header,
+#register-header {
+    margin: 3em 0;
+}
+
+.login-input {
+    color: #00B9FF;
+}
+
+#register-button,
+#login-button-redirect {
+    text-decoration: none;
+    color: #00B9FF;
+    margin: 0 1em;
+}
+
+#account-create {
+    margin: 5em 0 0 0;
+}
+
+#show-password {
+    color: #00B9FF;
+    cursor: pointer;
+}
+
+#login-button,
+#register-account {
+    color: white;
+    background-color: #00B9FF;
+    border: none;
+    margin: 2em auto 0 auto;
+    padding: 1em 0;
+    width: 40%;
+    border-radius: 1em;
+}
 
 /*
 _____________________
@@ -203,40 +389,217 @@ _____________________
 */
 
 #body-search-filter {
-    height: 20vh;
     width: 100%;
+    height: 40vh;
+    margin-bottom: 6vh;
 }
 
-#body-search-list {
+#body-search-container {
     width: 100%;
+    margin-bottom: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 15vh;
+    background-color: hsla(0, 0%, 0%, 0.05);
+}
+
+select,
+#lower-price,
+#max-price {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    font-size: 1.3em;
+}
+
+.styling-label {
+    font-size: 1.3em;
+}
+
+#body-page-nav {
+    margin-top: 8vh;
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pageNumbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00B9FF;
+    width: 50px;
+    height: 50px;
+    border-radius: 10em;
+    cursor: pointer;
+}
+
+#current {
+    background-color: #eeeeee;
+}
+
+
+/*
+____________________________
+
+---- Specific Game Page ----
+____________________________
+*/
+
+#one-game-container {
+    margin: 10vh 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    padding: 2em 1em;
+    border-radius: 1em;
+    background-color: #eeeeee;
+    filter: drop-shadow(0 0 50px hsla(0, 0%, 0%, 0.2));
+    height: fit-content;
+}
+
+#one-game-image {
+    width: 500px;
+    height: 200px;
+    border-radius: 3em;
+}
+
+#one-game-title {
+    color: #00B9FF;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#one-game-info {
+    margin-left: 2em;
+}
+
+#one-game-store-deals {
+    width: 90%;
+}
+
+#one-game-info-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    height: 30%;
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+#one-game-store-deal-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 2em 0;
+}
+
+.one-game-stores {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3fcff;
+    color: black;
+    padding: 1em 2em;
+    border-radius: 1em;
+    filter: drop-shadow(0 0 6px hsla(0, 0%, 0%, 0.05));
+}
+
+.one-game-stores-redirect {
+    color: white;
+    text-decoration: none;
+    background-color: #00B9FF;
+    padding: 1em 2em;
+    border-radius: 1em;
+}
+
+.one-game-stores-retail,
+.one-game-stores-price,
+.one-game-stores-savings {
+    background-color: hsla(0, 0%, 0%, 0.1);
+    padding: 1em 2em;
+    border-radius: 2em;
+}
+
+
+/*
+______________________
+
+---- Profile Page ----
+______________________
+*/
+
+
+#profile-container {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 0 4vw;
 }
 
-.body-search-list-game {
+#profile-username-container {
     display: flex;
-    background-color: #b9b9b9;
-    width: 85%;
-    height: 6vh;
-    border-radius: 1em 0.2em 0.2em 1em;
-    padding: 1em;
-}
-
-.body-search-list-game-thumb {
-    border-radius: 0.9em 0.2em 0.2em 0.9em;
-    height: 100%;
-
-    /*Adapted from: https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow()*/
-    filter: drop-shadow(0px 0px 10px #000000);
-}
-
-.body-search-list-game-container2 {
-    width: 100%;
-    display: flex;
+    justify-content: center;
     align-items: center;
+    width: 50%;
+    margin: 1em;
+}
+
+#profile-header {
+    margin: 3em 0;
+}
+
+#profile-username-change {
+    margin: 0 3em;
+}
+
+
+
+
+
+/* ICOMOON */
+/* src:  https://icomoon.io/app */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('./fonts/icomoon.eot');
+    src: url('./fonts/icomoon.eot') format('embedded-opentype'),
+        url('./fonts/icomoon.ttf') format('truetype'),
+        url('./fonts/icomoon.woff') format('woff'),
+        url('./fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+    content: "\e986";
+    position: absolute;
+    z-index: 1000;
+    right: 4.5%;
+    top: 25%;
 }

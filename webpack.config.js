@@ -7,6 +7,7 @@ module.exports = {
         search: "./script/search.js",
         loggedin: "./script/loggedin.js",
         register: "./script/register.js",
+        getGame: "./script/getGame.js"
     },
     output: {
         path: path.resolve(__dirname, 'docs'),

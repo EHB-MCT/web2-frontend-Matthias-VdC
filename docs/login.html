@@ -17,6 +17,8 @@
             <div class="header-search">
                 <form id="header-search-form" autocomplete="off">
                     <input id="header-search-box" type="text" placeholder="Search games...">
+                    <input type="button" id="header-search-box-button">
+                    <span class=" icon-search"></span>
                 </form>
             </div>
             <div id="header-profile">
@@ -33,22 +35,24 @@
 
         <section id="body-container">
             <div id="login-container">
+                <h2 id="login-header">LOG IN</h2>
                 <form id="login-form">
-                    <label for="login-email"></label>
+                    <label class="login-input" for="login-email">Email</label>
                     <!-- Pattern taken from:  https://www.w3schools.com/tags/att_input_pattern.asp  -->
                     <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@gmail.com" type="email"
                         id="login-email" class="login-field" required>
+                    <label class="login-input" for="login-password">Password</label>
                     <input placeholder="password" type="password" id="login-password" class="login-field" required>
                     <div id="password-container">
                         <input type="checkbox" id="show-password">
                         <label for="show-password">Show password</label>
                     </div>
-                    <button href="index.html">Log in</button>
+                    <button id="login-button" href="index.html">Log in</button>
                 </form>
 
-                <p>don't have an account?
+                <p id="account-create">don't have an account?
                     <!-- https://stackoverflow.com/questions/13003044/href-going-to-top-of-page-prevent -->
-                    <a href="./register.html" id="register-button">register now</a>
+                    <a href="./register.html" id="register-button">Sign up now ></a>
                 </p>
             </div>
         </section>

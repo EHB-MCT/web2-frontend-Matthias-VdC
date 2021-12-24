@@ -18,6 +18,7 @@
                 <form id="header-search-form" autocomplete="off">
                     <input id="header-search-box" type="text" placeholder="Search games...">
                     <input type="button" id="header-search-box-button">
+                    <span class=" icon-search"></span>
                 </form>
             </div>
             <div id="header-profile">
@@ -33,17 +34,42 @@
     <main>
 
         <section id="body-container">
-            <div id="body-search-filter"></div>
+            <div id="body-search-filter">
+                <div id="body-header-image-container">
+                    <a id="body-header-linkwrapper" href="#">
+                        <img id="body-header-image" src="./images/halo-banner-link.jpg" alt="image">
+                        <p id="body-header-image-button">View deals</p>
+                    </a>
+                </div>
+            </div>
+            <div class="body-list-info">
+                <h2>Hot sales: </h2>
+            </div>
             <div id="body-search-list"></div>
             <div id="body-search-more">
-                <a href="#/" id="loadMore">load more</a>
+                <a class="loadMore" href="#/" id="loadMore-hot-sales">load more</a>
+            </div>
+            <hr class="line-separator">
+            <div class="body-list-info">
+                <h2>Top rated: </h2>
+            </div>
+            <div id="body-top-rated">
+
+            </div>
+            <div id="body-search-more">
+                <a class="loadMore" href="#/" id="loadMore-top-rated">load more</a>
             </div>
         </section>
 
     </main>
 
     <footer>
-        footer
+        <div>
+
+        </div>
+        <div>
+
+        </div>
     </footer>
 
     <script src="./index.js"></script>
