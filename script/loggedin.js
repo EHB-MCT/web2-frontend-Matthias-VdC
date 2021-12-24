@@ -42,9 +42,11 @@ if (sessionStorage.getItem("login")) {
         });
     }
 
-    document.getElementById("profile-email-container").innerHTML = `
+    if (document.getElementById("profile-email-container")) {
+        document.getElementById("profile-email-container").innerHTML = `
         <p>Email: ${userData.email}</p>
     `;
+    }
 
     //if user clicks on profile
     if (document.getElementById("profile-container")) {
